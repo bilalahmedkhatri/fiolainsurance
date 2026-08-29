@@ -1,0 +1,8 @@
+{
+  "name": "Remix A \u0026 J Fiola Insurance Agency",
+  "description": "Official website and client portal for A \u0026 J Fiola Insurance Agency Ltd. in Ste. Anne, Manitoba. Providing Autopac, residential, commercial, and travel health insurance since 1972.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
