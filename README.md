@@ -1,20 +1,69 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# A & J Fiola Insurance Agency
 
-# Run and deploy your AI Studio app
+Bilingual (English / Français) website and client portal for **A & J Fiola Insurance Agency Ltd.** — a family insurance brokerage in Ste. Anne, Manitoba, serving the community since 1972.
 
-This contains everything you need to run your app locally.
+## What it is
 
-View your app in AI Studio: https://ai.studio/apps/fbda8b20-9c46-4a6a-9eb2-0057c3f13609
+A marketing + self-service site presenting the agency's insurance services, partner links, hours/location, and contact details, with a bilingual client portal for policy-change requests, commercial certificate requests, and claim guidance.
 
-## Run Locally
+- **Auto & Vehicle** — Official MPI Autopac agent (registration, licensing, vehicle coverage)
+- **Residential & Property** — Homeowner, tenant/condo, new construction, contractor packages
+- **Travel Health** — Emergency medical, multi-trip, trip cancellation, Visitors to Canada / Super Visa
+- **Commercial** — Contractor packages and liability coverage
 
-**Prerequisites:**  Node.js
+## Tech stack
 
+- React 19 + TypeScript
+- Vite 6 (dev server / build)
+- Tailwind CSS v4
+- lucide-react icons
+- Google Fonts (Space Grotesk, Plus Jakarta Sans, JetBrains Mono)
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+This is a client-side SPA (no backend). Forms are front-end demos and do not transmit data.
+
+## Getting started
+
+```bash
+npm install      # or: bun install
+npm run dev      # http://localhost:3000
+```
+
+## Available scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the Vite dev server on port 3000 |
+| `npm run build` | Build the production bundle into `dist/` |
+| `npm run preview` | Preview the built `dist/` locally |
+| `npm run lint` | Type-check with `tsc --noEmit` |
+| `npm run clean` | Remove `dist/` (build output) |
+
+## Project structure
+
+```
+src/
+├── App.tsx              # Routing, language + modal state
+├── main.tsx             # React entry point
+├── index.css            # Tailwind + base theme
+├── types.ts             # Shared TypeScript types
+├── data/
+│   └── insuranceData.ts # All agency content (single source of truth)
+├── components/
+│   ├── Navbar.tsx
+│   ├── Footer.tsx
+│   └── QuoteModal.tsx
+└── pages/
+    ├── HomePage.tsx
+    ├── ServicesPage.tsx
+    ├── ClientPortalPage.tsx
+    ├── LinksPage.tsx
+    ├── HoursLocationPage.tsx
+    └── ContactPage.tsx
+```
+
+## Notes
+
+- Content (address, phone, hours, services) lives in `src/data/insuranceData.ts`.
+- The site is bilingual; copy is switched inline via a `language` prop (`en` / `fr`).
+- `GEMINI_API_KEY` / `APP_URL` env vars are injected at runtime by AI Studio and are not required for local dev.
+- See `agents.md` for a detailed guide for working in this codebase.
